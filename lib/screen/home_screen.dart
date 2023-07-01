@@ -3,6 +3,7 @@ import 'package:scrollable_widgets/layout/main_layout.dart';
 import 'package:scrollable_widgets/screen/grid_view_screen.dart';
 import 'package:scrollable_widgets/screen/list_view_screen.dart';
 import 'package:scrollable_widgets/screen/reodrderable_list_view_screen.dart';
+import 'package:scrollable_widgets/screen/scrollbar_screen.dart';
 import 'package:scrollable_widgets/screen/single_child_scroll_view_screen.dart';
 
 import 'custom_scroll_view_screen.dart';
@@ -18,6 +19,7 @@ class ScreenModel {
 }
 
 class HomeScreen extends StatelessWidget {
+  //위젯리스트를 생성해서, 각 리스트를 매핑하여 children구성
   final screens = [
     ScreenModel(
       builder: (_) => SingleChildScrollViewScreen(),
@@ -38,6 +40,10 @@ class HomeScreen extends StatelessWidget {
     ScreenModel(
       builder: (_) => CustomScrollViewScreen(),
       name: 'CustomScrollViewScreen',
+    ),
+    ScreenModel(
+      builder: (_) => ScrollbarScreen(),
+      name: 'ScrollbarScreen',
     ),
   ];
 
