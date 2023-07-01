@@ -4,13 +4,13 @@ import 'package:flutter/material.dart';
 // 여기서는 모든 페이지에 앱바를 추가 함
 
 class MainLayout extends StatelessWidget {
-  final String appbarTitle;
-  final Widget scaffoldBody;
+  final String title;
+  final Widget child;
 
   const MainLayout({
     super.key,
-    required this.appbarTitle,
-    required this.scaffoldBody,
+    required this.title,
+    required this.child,
   });
 
   @override
@@ -18,10 +18,10 @@ class MainLayout extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          appbarTitle,
+          title,
         ),
       ),
-      body: scaffoldBody,
+      body: child,
     );
   }
 }

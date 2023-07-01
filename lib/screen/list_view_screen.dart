@@ -10,8 +10,8 @@ class ListViewScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MainLayout(
-      appbarTitle: 'ListViewScreen',
-      scaffoldBody: renderSeperated()
+      title: 'ListViewScreen',
+      child: renderSeperated()
     );
   }
 

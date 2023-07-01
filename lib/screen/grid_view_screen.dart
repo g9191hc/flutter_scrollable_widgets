@@ -10,8 +10,8 @@ class GridViewScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MainLayout(
-      appbarTitle: 'GridViewScreen',
-      scaffoldBody: renderBuilder(),
+      title: 'GridViewScreen',
+      child: renderBuilder(),
     );
   }
 

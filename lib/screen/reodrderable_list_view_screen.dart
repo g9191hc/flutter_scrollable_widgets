@@ -18,8 +18,8 @@ class _ReorderableListViewScreenState extends State<ReorderableListViewScreen> {
   @override
   Widget build(BuildContext context) {
     return MainLayout(
-      appbarTitle: 'ReorderableListViewScreen',
-      scaffoldBody: renderBuilder(),
+      title: 'ReorderableListViewScreen',
+      child: renderBuilder(),
     );
   }
 

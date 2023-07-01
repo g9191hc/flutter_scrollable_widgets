@@ -2,29 +2,27 @@ import 'package:flutter/material.dart';
 import 'package:scrollable_widgets/const/colrs.dart';
 import 'package:scrollable_widgets/layout/main_layout.dart';
 
-class ScrollbarScreen extends StatelessWidget {
+class RefreshIndicatorScreen extends StatelessWidget {
   final List<int> numbers = List.generate(100, (index) => index);
 
-  ScrollbarScreen({super.key});
+  RefreshIndicatorScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MainLayout(
-      title: 'ScrollbarScreen',
-      //Scrollbar위젯으로 감싸면 우측에 스크롤이 보임
-      //다만 builder리스트는 그 크기를 처음에 알 수 없으므로, Scrollbar로 감싸도 스크롤바가 나타나지 않음
-      child: Scrollbar(
-        child: SingleChildScrollView(
-          child: Column(
-            children: numbers
-                .map(
-                  (e) => renderContainer(
-                    color: rainbowColors[e % rainbowColors.length],
-                    index: e,
-                  ),
-                )
-                .toList(),
-          ),
+      title: 'RefreshIndicatorScreen',
+      // 새로고침(맨 위에서 아래로 당기기) 했을 때 기다리는 동안 로딩표시
+      child: RefreshIndicator(
+        onRefresh: () async {
+          await Future.delayed(Duration(seconds: 3));
+        },
+        child: ListView(
+          children: numbers
+              .map(
+                (e) => renderContainer(
+                    color: rainbowColors[e % rainbowColors.length], index: e),
+              )
+              .toList(),
         ),
       ),
     );

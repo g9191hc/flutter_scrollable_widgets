@@ -10,8 +10,8 @@ class SingleChildScrollViewScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MainLayout(
-      appbarTitle: 'SingleChildScrollView',
-      scaffoldBody: renderPerformance(),
+      title: 'SingleChildScrollView',
+      child: renderPerformance(),
     );
   }
 
