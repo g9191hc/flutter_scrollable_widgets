@@ -28,7 +28,7 @@ class _ReorderableListViewScreenState extends State<ReorderableListViewScreen> {
       itemBuilder: (context, index) {
         //builder에서는 필요하거나 변경된 요소만 새로 그리고 유지함
         //setState로 numbers의 값을 변경하는 것이므로, index가 아니라 index에 해당하는 numbers의 값를 사용해야 반영이 됨
-        return renderContainer(color: rainbowColrs[numbers[index] % rainbowColrs.length], index: numbers[index]);
+        return renderContainer(color: rainbowColors[numbers[index] % rainbowColors.length], index: numbers[index]);
       },
       itemCount: 100,
       onReorder: (int oldIndex, int newIndex) {
@@ -54,7 +54,7 @@ class _ReorderableListViewScreenState extends State<ReorderableListViewScreen> {
       },
       children: numbers
           .map((e) => renderContainer(
-                color: rainbowColrs[e % rainbowColrs.length],
+                color: rainbowColors[e % rainbowColors.length],
                 index: e,
               ))
           .toList(),

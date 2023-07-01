@@ -20,7 +20,7 @@ class SingleChildScrollViewScreen extends StatelessWidget {
     return SingleChildScrollView(
       child: Column(
         children:
-            rainbowColrs.map((color) => renderContainer(color: color)).toList(),
+            rainbowColors.map((color) => renderContainer(color: color)).toList(),
       ),
     );
   }
@@ -55,7 +55,7 @@ class SingleChildScrollViewScreen extends StatelessWidget {
       child: Column(
         children: numbers
             .map((e) => renderContainer(
-                  color: rainbowColrs[e % rainbowColrs.length],
+                  color: rainbowColors[e % rainbowColors.length],
                   index: e,
                 ))
             .toList(),
